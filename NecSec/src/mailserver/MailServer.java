@@ -34,6 +34,15 @@ public class MailServer extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setAttribute("user", "ncsu");
+		request.setAttribute("isAt", "start");
+		System.out.println(request.getContextPath());
+		//response.sendRedirect(request.getContextPath() + "/jsp/ShowEmail.jsp" );
+		request.getRequestDispatcher("jsp/ShowEmail.jsp").forward(request,response);
 	}
+	
+	//public String getUser(){
+//		return "ncsu";
+//	}
 
 }
